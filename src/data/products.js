@@ -18,7 +18,6 @@ export const products = [
   {
     id: '0cc0ca35-764e-458e-a1bc-b494497e05a4',
     title: 'Mouse King M724',
-    description: 'El K1ng es un ratón híper competitivo que esquiva los ornamentos innecesarios para concentrarse plenamente en el rendimiento.',
     stock: 6,
     image: '/img/KING-M724-B.png',
     price: 300,
