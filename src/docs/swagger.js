@@ -23,7 +23,7 @@ export const swaggerSpec = swaggerJSDoc({
           properties: {
             id: {
               type: 'string',
-              example: 'p1'
+              example: '0cc0ca35-764e-458e-a1bc-b494497e05a2'
             },
             title: {
               type: 'string',

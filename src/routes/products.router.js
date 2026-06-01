@@ -35,7 +35,7 @@ router.get('/', getProducts);
  *        description: ID del producto
  *        schema:
  *          type: string
- *        example: p1
+ *        example: 0cc0ca35-764e-458e-a1bc-b494497e05a2
  *    responses:
  *      200:
  *        description: Producto encontrado correctamente
@@ -95,7 +95,7 @@ router.post('/', createProduct);
  *         description: ID del producto a actualizar
  *         schema:
  *           type: string
- *         example: p1
+ *         example: 0cc0ca35-764e-458e-a1bc-b494497e05a2
  *     requestBody:
  *       required: true
  *       content:
@@ -132,7 +132,7 @@ router.put('/:pid', updateProduct);
  *         description: ID del producto a eliminar
  *         schema:
  *           type: string
- *         example: p1
+ *         example: 0cc0ca35-764e-458e-a1bc-b494497e05a2
  *     responses:
  *       200:
  *         description: Producto eliminado correctamente
