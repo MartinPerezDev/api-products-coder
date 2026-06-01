@@ -1,6 +1,7 @@
 import { products } from '../data/products.js';
 import { createError } from '../utils/createError.js';
 import { successResponse } from '../utils/apiResponse.js';
+import crypto from 'crypto';
 
 export function getProducts(req, res) {
   return successResponse(res, {
@@ -12,8 +13,8 @@ export function getProducts(req, res) {
 export function getProductById(req, res, next) {
   const { pid } = req.params;
 
-  const product = products.find((item)=> item.id === pid );
-  if(!product) {
+  const product = products.find((item) => item.id === pid);
+  if (!product) {
     return next(createError("Product not found", 404));
   };
 
@@ -24,17 +25,19 @@ export function getProductById(req, res, next) {
 };
 
 export function createProduct(req, res) {
-  const { title, price, stock } = req.body;
+  const { title, price, stock, image, category } = req.body;
 
-  if ( !title || !price || !stock ) {
+  if (!title || !price || !stock || !image || !category) {
     throw createError('Invalid product data', 400);
   };
 
   const product = {
-    id: `p${products.length + 1}`,
+    id: crypto.randomUUID(),
     title,
     price,
     stock,
+    image,
+    category
   };
 
   products.push(product);
@@ -48,7 +51,7 @@ export function createProduct(req, res) {
 
 export function updateProduct(req, res, next) {
   const { pid } = req.params;
-  const { title, price, stock } = req.body;
+  const { title, price, stock, image, category } = req.body;
 
   const productIndex = products.findIndex((item) => item.id === pid);
 
@@ -61,6 +64,8 @@ export function updateProduct(req, res, next) {
     title,
     price,
     stock,
+    image,
+    category
   };
 
   products[productIndex] = updatedProduct;

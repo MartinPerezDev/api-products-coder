@@ -10,8 +10,8 @@ export const swaggerSpec = swaggerJSDoc({
     },
     servers: [
       {
-        url: 'http://localhost:3000',
-        description: 'Servidor local'
+        url: 'https://api-products-coder.onrender.com/',
+        description: 'Servidor en Render'
       }
     ],
 
@@ -36,6 +36,14 @@ export const swaggerSpec = swaggerJSDoc({
             stock: {
               type: 'number',
               example: 5
+            },
+            image: {
+              type: 'string',
+              example: '/img/mi-imagen.jpg'
+            },
+            category: {
+              type: 'string',
+              example: 'mouse'
             }
           }
         },
@@ -105,9 +113,17 @@ export const swaggerSpec = swaggerJSDoc({
             stock: {
               type: 'number',
               example: 20
+            },
+            image: {
+              type: 'string',
+              example: '/img/mi-imagen.jpg'
+            },
+            category: {
+              type: 'string',
+              example: 'mouse'
             }
           },
-          required: ['title', 'price', 'stock']
+          required: ['title', 'price', 'stock', 'image', 'category']
         }
 
       }

@@ -11,10 +11,12 @@ import { requestId } from './middlewares/requestId.js';
 import metricsRouter from './routes/metrics.router.js';
 import debugRouter from './routes/debug.router.js';
 import docsRouter from './routes/docs.router.js';
+import cors from 'cors';
 
 const app = express();
 
 //Bloque 1 - middleware de config
+app.use(cors()); 
 app.use(compression());
 app.use(express.json());
 app.use(requestId);
